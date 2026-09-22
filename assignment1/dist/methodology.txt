@@ -1,0 +1,27 @@
+SKILLS COMPASS — DATA AND METHODOLOGY NOTE
+Massachusetts workforce planning | Snapshot: September 22, 2026
+
+Purpose and user
+Help workforce agencies and training providers shortlist occupations for employer consultation and curriculum planning. This is a demand-and-required-skills tool, not a measured local skills-gap estimate.
+
+Sources and collection
+1. Massachusetts Department of Economic Research, Long-Term Occupational Projections, statewide, 2024–2034. Downloaded the complete occupation CSV on 2026-09-22. Includes 2025 mean annual OES wages and typical entry education.
+https://lmi.dua.eol.mass.gov/lmi/LongTermOccupationProjections/LTOPResultAll?A=01&GA=000025&Cmd=Go&Type=long&Dopt=CSV
+2. O*NET 31.0, Essential Skills and Transferable Skills CSV files, downloaded 2026-09-22. National occupational importance ratings, with varying collection dates retained per rating.
+https://www.onetcenter.org/database.html
+
+Preparation and joins
+Remove the all-occupations total and footer text, retaining 634 occupation rows. Normalize six-digit SOC codes to XX-XXXX. Convert comma-separated counts, dollar amounts and percentage strings to numbers. Missing/suppressed values become null, never zero. Join only exact SOC + .00 O*NET codes; exclude ratings marked Recommend Suppress = Y and retain Importance (IM) ratings. This gives 572 matched occupations; 62 are unmatched and 19 wage values are unavailable. The 634 published detail rows sum to 404,891 annual openings, versus 415,218 in the source all-occupations total; dashboard sums describe the published detail rows, not the full statewide total. No averaging of O*NET specialties. No personal data was collected.
+
+Units and calculations
+Employment: jobs in 2024 and projected 2034. Growth: percent change over ten years. Annual openings: average openings per year over the projection period, including net growth, exits and occupational transfers; not live vacancies. Wages: 2025 mean annual OES wage in USD from DER; not entry-level pay or median worker pay. Skills: importance from 1 (not important) to 5 (extremely important), not percent proficiency.
+The overview sums nonmissing annual openings. Aggregate growth = (sum projected employment / sum base employment - 1) × 100, using only rows with both employment values. Typical occupation wage = unweighted median of nonmissing occupation mean wages. It is not an employment-weighted average or statewide median worker wage. Scatter bubbles show occupations with nonmissing wage and growth, with size increasing by square root of annual openings. The skills chart shows the ten highest importance ratings, ties alphabetically.
+
+Decision rules
+Priority 1 selects the filtered occupation with the most annual openings among occupations with positive growth, 100+ annual openings and mean wage >= $60,000. Priority 2 selects the most annual openings among positive-growth occupations with mean wage >= $50,000 and entry education of high school, some college, a postsecondary non-degree award or an associate degree. These thresholds are transparent analyst choices, not validated shortage scores. Suggestions require employer and training-provider validation; filters may yield no candidates.
+
+Limitations and reflection
+Local worker skill supply, graduates, vacancies, course capacity and program outcomes are not included. Skills are national and collection dates differ; projections and wages measure different periods. Projections are uncertain and statewide averages hide local variation. Education categories do not capture all licensing, experience or access barriers. Occupational openings can reflect turnover even when employment declines. High percentage growth may reflect a small employment base. O*NET exact-match rules exclude some occupations; do not interpret missing skills as absence of requirements. This evidence cannot establish a shortage, an individual's likely salary, or causal benefits of funding a course. Next research should examine employer hiring difficulty, IPEDS/ROAD training pipelines, migration and course accessibility.
+
+Reuse
+O*NET 31.0 data adapted from the U.S. Department of Labor, Employment and Training Administration under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/. Adaptations: selected importance ratings, joined occupations and ranked top skills. Student project; not an official government website.
