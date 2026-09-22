@@ -2,7 +2,7 @@
 
 Live website: https://massachusetts-workforce-skills.mzhxn.chatgpt.site
 
-The Site currently requires owner access. Repository access does not grant access to the hosted Site.
+The website is accessible to everyone with the link.
 
 ## Local preview
 
