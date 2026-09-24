@@ -1,0 +1,2 @@
+# Stores the completion message captured from Agent 1 by the orchestrator.
+# This placeholder is replaced when the completed exercise is run.

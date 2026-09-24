@@ -1,0 +1,3 @@
+# Stores the combined output of all three agents, in agent order.
+# The orchestrator produces this file only after all agents have finished.
+# This placeholder is replaced when the completed exercise is run.
